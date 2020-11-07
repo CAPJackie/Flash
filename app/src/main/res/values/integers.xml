@@ -1,0 +1,6 @@
+<resources>
+    <integer name="facebook">0</integer>
+    <integer name="instagram">1</integer>
+    <integer name="twitter">2</integer>
+    <integer name="linkedin">3</integer>
+</resources>
