@@ -32,7 +32,8 @@
         android:id="@+id/settings_scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+        tools:layout_editor_absoluteX="119dp"
+        tools:layout_editor_absoluteY="27dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -56,7 +57,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@id/apply_button"
-                app:layout_constraintTop_toBottomOf="@id/social_media_tabs_textview" />
+                app:layout_constraintTop_toBottomOf="@id/social_network_list" />
 
             <TextView
                 android:id="@+id/settings_textview"
@@ -78,8 +79,16 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/social_media_tabs"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/settings_textview"
-                 />
+                app:layout_constraintTop_toBottomOf="@+id/settings_textview" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/social_network_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/social_media_tabs_textview"
+                app:layout_constraintStart_toStartOf="@+id/social_media_tabs_textview"
+                app:layout_constraintTop_toBottomOf="@id/social_media_tabs_textview" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

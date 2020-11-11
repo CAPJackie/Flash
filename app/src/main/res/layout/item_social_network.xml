@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:layout_marginEnd="16dp"
+
+        />
+
+
+    <ImageView
+        android:id="@+id/social_network_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+         />
+
+    <TextView
+        android:id="@+id/social_network_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       android:gravity="center_vertical"
+        />
+
+</LinearLayout>
