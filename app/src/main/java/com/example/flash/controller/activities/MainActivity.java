@@ -1,11 +1,10 @@
-package com.example.flash.ui.activities;
+package com.example.flash.controller.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.flash.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
 import androidx.viewpager.widget.ViewPager;
@@ -13,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
 
-import com.example.flash.ui.main.SectionsPagerAdapter;
+import com.example.flash.view.adapters.SectionsPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
 

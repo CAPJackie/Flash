@@ -1,4 +1,4 @@
-package com.example.flash.ui.main;
+package com.example.flash.view;
 
 import androidx.arch.core.util.Function;
 import androidx.lifecycle.LiveData;

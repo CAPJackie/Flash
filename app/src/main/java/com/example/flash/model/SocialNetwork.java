@@ -1,9 +1,10 @@
 
-package com.example.flash.entities;
+package com.example.flash.model;
 
 public class SocialNetwork {
     private String name;
     private int icon;
+    private boolean checked;
 
 
     public SocialNetwork() {
@@ -12,6 +13,7 @@ public class SocialNetwork {
     public SocialNetwork(String name, int icon) {
         this.name = name;
         this.icon = icon;
+        this.checked = true;
     }
 
     public String getName() {
@@ -28,5 +30,13 @@ public class SocialNetwork {
 
     public void setIcon(int icon) {
         this.icon = icon;
+    }
+
+    public boolean isChecked() {
+        return checked;
+    }
+
+    public void setChecked(boolean checked) {
+        this.checked = checked;
     }
 }

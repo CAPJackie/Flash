@@ -1,11 +1,9 @@
-package com.example.flash.ui.activities;
+package com.example.flash.controller.activities;
 
 import android.os.Bundle;
 
-import com.example.flash.adapters.SocialNetworkAdapter;
-import com.example.flash.utils.Constants;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import com.example.flash.view.adapters.SocialNetworkAdapter;
+import com.example.flash.view.utils.Constants;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;

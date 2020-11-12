@@ -1,4 +1,4 @@
-package com.example.flash.ui.main;
+package com.example.flash.view.adapters;
 
 import android.content.Context;
 
@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.flash.R;
+import com.example.flash.controller.fragments.PlaceholderFragment;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
