@@ -1,4 +1,4 @@
-package com.example.flash.view.adapters;
+package com.example.flash.adapters;
 
 import android.content.Context;
 

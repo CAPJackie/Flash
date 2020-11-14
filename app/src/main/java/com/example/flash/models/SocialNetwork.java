@@ -1,5 +1,5 @@
 
-package com.example.flash.model;
+package com.example.flash.models;
 
 public class SocialNetwork {
     private String name;

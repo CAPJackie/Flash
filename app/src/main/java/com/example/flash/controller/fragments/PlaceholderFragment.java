@@ -38,22 +38,12 @@ public class PlaceholderFragment extends Fragment {
     }
 
     public static PlaceholderFragment newInstance(int index) {
-//        PlaceholderFragment fragment = new PlaceholderFragment(index);
-//        Bundle bundle = new Bundle();
-//        bundle.putInt(ARG_SECTION_NUMBER, index);
-//        fragment.setArguments(bundle);
         return new PlaceholderFragment(index);
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        int index = 1;
-//        pageViewModel = ViewModelProviders.of(this).get(PageViewModel.class);
-//        if (getArguments() != null) {
-//            index = getArguments().getInt(ARG_SECTION_NUMBER);
-//        }
-//        pageViewModel.setIndex(index);
     }
 
     @Override

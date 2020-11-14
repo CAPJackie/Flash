@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
 
-import com.example.flash.view.adapters.SectionsPagerAdapter;
+import com.example.flash.adapters.SectionsPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
