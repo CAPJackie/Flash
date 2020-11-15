@@ -1,4 +1,4 @@
-package com.jackie.flash.controller.activities;
+package com.jackie.flash.ui.activities;
 
 import android.os.Bundle;
 
@@ -8,6 +8,7 @@ import com.jackie.flash.models.SocialNetwork;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -46,6 +47,9 @@ public class SettingsActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.social_network_list);
 
 
+
+
+
         applyButton.setEnabled(false);
         cancelButton.setOnClickListener(new View.OnClickListener(){
 
@@ -57,13 +61,21 @@ public class SettingsActivity extends AppCompatActivity {
 
 
 
-        mSettingsActivityViewModel = ViewModelProviders.of(this).get(SettingsActivityViewModel.class);
+        mSettingsActivityViewModel = new ViewModelProvider(this).get(SettingsActivityViewModel.class);
+
 
         mSettingsActivityViewModel.init();
 
         mSettingsActivityViewModel.getSocialNetworks().observe(this, new Observer<List<SocialNetwork>>() {
             @Override
             public void onChanged(List<SocialNetwork> socialNetworks) {
+                System.out.println("Social Network list has changed");
+                if(mSettingsActivityViewModel.validateForDataUpdates(socialNetworks)){
+                    applyButton.setEnabled(true);
+                } else{
+                    applyButton.setEnabled(false);
+                }
+
                 socialNetworkAdapter.notifyDataSetChanged();
             }
         });
@@ -73,7 +85,7 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     private void initRecyclerView() {
-        socialNetworkAdapter = new SocialNetworkAdapter(mSettingsActivityViewModel.getSocialNetworks().getValue());
+        socialNetworkAdapter = new SocialNetworkAdapter(mSettingsActivityViewModel.getSocialNetworks().getValue(), mSettingsActivityViewModel);
         recyclerView.setAdapter(socialNetworkAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

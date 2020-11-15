@@ -1,4 +1,4 @@
-package com.jackie.flash.controller.fragments;
+package com.jackie.flash.ui.fragments;
 
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -11,16 +11,13 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.jackie.flash.R;
-import com.jackie.flash.view.PageViewModel;
 
 /**
  * A placeholder fragment containing a simple view.
  */
 public class PlaceholderFragment extends Fragment {
 
-    private static final String ARG_SECTION_NUMBER = "section_number";
 
-    private PageViewModel pageViewModel;
 
     public int getSocialMediaType() {
         return socialMediaType;
@@ -37,9 +34,6 @@ public class PlaceholderFragment extends Fragment {
         this.socialMediaType = socialMediaType;
     }
 
-    public static PlaceholderFragment newInstance(int index) {
-        return new PlaceholderFragment(index);
-    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

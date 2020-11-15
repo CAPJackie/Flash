@@ -1,4 +1,4 @@
-package com.jackie.flash.controller.activities;
+package com.jackie.flash.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;

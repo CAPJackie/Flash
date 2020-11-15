@@ -10,11 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.jackie.flash.controller.activities.SettingsActivity"
+            android:name="com.jackie.flash.ui.activities.SettingsActivity"
             android:label="@string/title_activity_settings"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name="com.jackie.flash.controller.activities.MainActivity"
+            android:name="com.jackie.flash.ui.activities.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

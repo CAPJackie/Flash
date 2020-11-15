@@ -6,14 +6,19 @@ public class SocialNetwork {
     private int icon;
     private boolean checked;
 
-
-    public SocialNetwork() {
-    }
-
     public SocialNetwork(String name, int icon) {
         this.name = name;
         this.icon = icon;
         this.checked = true;
+    }
+
+    @Override
+    public String toString() {
+        return "SocialNetwork{" +
+                "name='" + name + '\'' +
+                ", icon=" + icon +
+                ", checked=" + checked +
+                '}';
     }
 
     public String getName() {

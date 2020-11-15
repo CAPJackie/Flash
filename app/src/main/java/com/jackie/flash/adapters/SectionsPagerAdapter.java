@@ -9,7 +9,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.jackie.flash.R;
-import com.jackie.flash.controller.fragments.PlaceholderFragment;
+import com.jackie.flash.ui.fragments.PlaceholderFragment;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
@@ -30,7 +30,8 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         // getItem is called to instantiate the fragment for the given page.
         // Return a PlaceholderFragment (defined as a static inner class below).
-        return PlaceholderFragment.newInstance(position);
+        //TODO Refactorize with a fragment file for each one
+        return new PlaceholderFragment(position);
     }
 
     @Nullable

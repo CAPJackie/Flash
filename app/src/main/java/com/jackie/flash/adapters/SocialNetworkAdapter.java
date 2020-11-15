@@ -7,21 +7,27 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.jackie.flash.R;
 import com.jackie.flash.models.SocialNetwork;
+import com.jackie.flash.ui.activities.SettingsActivity;
+import com.jackie.flash.viewmodels.SettingsActivityViewModel;
 
 import java.util.List;
 
-public class SocialNetworkAdapter extends RecyclerView.Adapter<SocialNetworkAdapter.ViewHolder> {
+public class SocialNetworkAdapter extends RecyclerView.Adapter<SocialNetworkAdapter.ViewHolder> implements View.OnClickListener {
 
     private List<SocialNetwork> socialNetworkList;
+    private SettingsActivityViewModel associateViewModel;
 
-    public SocialNetworkAdapter(List<SocialNetwork> socialNetworkList){
+    public SocialNetworkAdapter(List<SocialNetwork> socialNetworkList, SettingsActivityViewModel associateViewModel){
         this.socialNetworkList = socialNetworkList;
+        this.associateViewModel = associateViewModel;
     }
 
 
@@ -34,14 +40,16 @@ public class SocialNetworkAdapter extends RecyclerView.Adapter<SocialNetworkAdap
         View socialNetworkCardView = inflater.inflate(R.layout.item_social_network, parent, false);
 
 
+
         return new ViewHolder(socialNetworkCardView);
 
 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         SocialNetwork socialNetwork = this.socialNetworkList.get(position);
+
 
         ImageView socialNetworkIcon = holder.socialNetworkIcon;
         TextView socialNetworkName = holder.socialNetworkName;
@@ -51,11 +59,35 @@ public class SocialNetworkAdapter extends RecyclerView.Adapter<SocialNetworkAdap
         socialNetworkIcon.setImageResource(socialNetwork.getIcon());
         socialNetworkName.setText(socialNetwork.getName());
         socialNetworkIsVisible.setChecked(socialNetwork.isChecked());
+        socialNetworkIsVisible.setTag(position);
+        socialNetworkIsVisible.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                associateViewModel.changeSocialNetworkChecked(position);
+            }
+        });
+
+
+
+
+
     }
 
     @Override
     public int getItemCount() {
         return this.socialNetworkList.size();
+    }
+
+    @Override
+    public void onClick(View view) {
+        CheckBox checkBox = (CheckBox) view;
+        Integer position = (Integer) checkBox.getTag();
+
+
+        System.out.println(this.socialNetworkList.get(position));
+
+        Toast.makeText(view.getContext(),  position+ " Selected", Toast.LENGTH_SHORT).show();
+
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder
