@@ -1,10 +1,29 @@
 
 package com.jackie.flash.models;
 
+import androidx.annotation.NonNull;
+
+import java.util.Objects;
+
 public class SocialNetwork {
     private String name;
     private int icon;
     private boolean checked;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SocialNetwork that = (SocialNetwork) o;
+        return icon == that.icon &&
+                checked == that.checked &&
+                Objects.equals(name, that.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, icon, checked);
+    }
 
     public SocialNetwork(String name, int icon) {
         this.name = name;
@@ -43,5 +62,9 @@ public class SocialNetwork {
 
     public void setChecked(boolean checked) {
         this.checked = checked;
+    }
+
+    public SocialNetwork clone(){
+        return new SocialNetwork(this.name, this.icon);
     }
 }

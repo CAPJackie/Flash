@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.jackie.flash.utils.Constants.SOCIAL_NETWORK_LIST;
+
 public class SettingsActivityViewModel extends ViewModel {
 
     private MutableLiveData<List<SocialNetwork>> mSocialNetworks;
@@ -31,11 +33,11 @@ public class SettingsActivityViewModel extends ViewModel {
 
 
             //TODO Pass Initial immutable data to state
-            LiveData<List<SocialNetwork>> prue = mSocialNetworks;
+            /*LiveData<List<SocialNetwork>> prue = mSocialNetworks;
 
-            ArrayList<SocialNetwork> prueba = new ArrayList<SocialNetwork>(mSocialNetworks.getValue());
+            ArrayList<SocialNetwork> prueba = new ArrayList<SocialNetwork>(mSocialNetworks.getValue());*/
 
-            initialSocialNetworksState =  prue.getValue();
+            initialSocialNetworksState = SOCIAL_NETWORK_LIST;
 
         }
     }
@@ -47,10 +49,7 @@ public class SettingsActivityViewModel extends ViewModel {
 
         List<SocialNetwork> updatedSocialNetworks = mSocialNetworks.getValue();
 
-
-//        System.out.println("Item seleccionado " + index);
         SocialNetwork foundSocialNetwork = updatedSocialNetworks.get(index);
-//        System.out.println(foundSocialNetwork+ " Found...");
         foundSocialNetwork.setChecked(! foundSocialNetwork.isChecked());
 
 
@@ -68,7 +67,7 @@ public class SettingsActivityViewModel extends ViewModel {
     }
 
     public boolean validateForDataUpdates(List<SocialNetwork> socialNetworks) {
-        System.out.println(socialNetworks.get(0) + "==" + this.initialSocialNetworksState.get(0) );
-        return !socialNetworks.equals(this.initialSocialNetworksState);
+        System.out.println(socialNetworks.get(0) + "==" + this.initialSocialNetworksState.get(0) + "LIST"+ SOCIAL_NETWORK_LIST );
+        return !socialNetworks.equals(initialSocialNetworksState);
     }
 }

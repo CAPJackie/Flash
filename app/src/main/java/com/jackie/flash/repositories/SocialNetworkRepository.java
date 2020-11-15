@@ -39,6 +39,8 @@ public class SocialNetworkRepository {
     }
 
     private void setSocialNetworks(){
-        dataSet = SOCIAL_NETWORK_LIST;
+        for (SocialNetwork socialNetwork: SOCIAL_NETWORK_LIST){
+            dataSet.add(socialNetwork.clone());
+        }
     }
 }

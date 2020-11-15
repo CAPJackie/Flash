@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,6 +19,8 @@ import com.jackie.flash.R;
 import com.jackie.flash.viewmodels.SettingsActivityViewModel;
 
 import java.util.List;
+
+import static com.jackie.flash.utils.Constants.SOCIAL_NETWORK_LIST;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -69,7 +70,7 @@ public class SettingsActivity extends AppCompatActivity {
         mSettingsActivityViewModel.getSocialNetworks().observe(this, new Observer<List<SocialNetwork>>() {
             @Override
             public void onChanged(List<SocialNetwork> socialNetworks) {
-                System.out.println("Social Network list has changed");
+                System.out.println("Social Network list has changed"+ SOCIAL_NETWORK_LIST);
                 if(mSettingsActivityViewModel.validateForDataUpdates(socialNetworks)){
                     applyButton.setEnabled(true);
                 } else{
@@ -78,6 +79,7 @@ public class SettingsActivity extends AppCompatActivity {
 
                 socialNetworkAdapter.notifyDataSetChanged();
             }
+
         });
 
         initRecyclerView();

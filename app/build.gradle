@@ -38,4 +38,6 @@ dependencies {
     implementation "android.arch.lifecycle:extensions:$archLifecycleVersion"
     annotationProcessor "android.arch.lifecycle:compiler:$archLifecycleVersion"
 
+
+
 }
