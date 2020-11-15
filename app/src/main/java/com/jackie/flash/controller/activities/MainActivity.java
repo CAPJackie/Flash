@@ -1,9 +1,9 @@
-package com.example.flash.controller.activities;
+package com.jackie.flash.controller.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.flash.R;
+import com.jackie.flash.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 
@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
 
-import com.example.flash.adapters.SectionsPagerAdapter;
+import com.jackie.flash.adapters.SectionsPagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.flash;
+package com.jackie.flash;
 
 import org.junit.Test;
 

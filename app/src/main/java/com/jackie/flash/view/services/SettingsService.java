@@ -1,7 +1,6 @@
-package com.example.flash.view.services;
+package com.jackie.flash.view.services;
 
-import com.example.flash.models.SocialNetwork;
-import com.example.flash.viewmodels.SettingsActivityViewModel;
+import com.jackie.flash.models.SocialNetwork;
 
 import java.util.ArrayList;
 import java.util.List;

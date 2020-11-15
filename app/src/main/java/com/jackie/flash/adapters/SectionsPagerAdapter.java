@@ -1,4 +1,4 @@
-package com.example.flash.adapters;
+package com.jackie.flash.adapters;
 
 import android.content.Context;
 
@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.flash.R;
-import com.example.flash.controller.fragments.PlaceholderFragment;
+import com.jackie.flash.R;
+import com.jackie.flash.controller.fragments.PlaceholderFragment;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to

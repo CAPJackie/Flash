@@ -1,11 +1,11 @@
-package com.example.flash.viewmodels;
+package com.jackie.flash.viewmodels;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.flash.models.SocialNetwork;
-import com.example.flash.repositories.SocialNetworkRepository;
+import com.jackie.flash.models.SocialNetwork;
+import com.jackie.flash.repositories.SocialNetworkRepository;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.example.flash.adapters;
+package com.jackie.flash.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,8 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.flash.R;
-import com.example.flash.models.SocialNetwork;
+import com.jackie.flash.R;
+import com.jackie.flash.models.SocialNetwork;
 
 import java.util.List;
 

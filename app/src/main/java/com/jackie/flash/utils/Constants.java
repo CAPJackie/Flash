@@ -1,7 +1,7 @@
-package com.example.flash.utils;
+package com.jackie.flash.utils;
 
-import com.example.flash.R;
-import com.example.flash.models.SocialNetwork;
+import com.jackie.flash.R;
+import com.jackie.flash.models.SocialNetwork;
 
 import java.util.Arrays;
 import java.util.List;

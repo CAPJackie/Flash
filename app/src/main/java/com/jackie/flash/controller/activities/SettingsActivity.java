@@ -1,10 +1,9 @@
-package com.example.flash.controller.activities;
+package com.jackie.flash.controller.activities;
 
 import android.os.Bundle;
 
-import com.example.flash.adapters.SocialNetworkAdapter;
-import com.example.flash.models.SocialNetwork;
-import com.example.flash.utils.Constants;
+import com.jackie.flash.adapters.SocialNetworkAdapter;
+import com.jackie.flash.models.SocialNetwork;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -16,8 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.flash.R;
-import com.example.flash.viewmodels.SettingsActivityViewModel;
+import com.jackie.flash.R;
+import com.jackie.flash.viewmodels.SettingsActivityViewModel;
 
 import java.util.List;
 

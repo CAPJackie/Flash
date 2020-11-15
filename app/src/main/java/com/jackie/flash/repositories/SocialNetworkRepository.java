@@ -1,14 +1,13 @@
-package com.example.flash.repositories;
+package com.jackie.flash.repositories;
 
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.example.flash.models.SocialNetwork;
+import com.jackie.flash.models.SocialNetwork;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.example.flash.utils.Constants.SOCIAL_NETWORK_LIST;
+import static com.jackie.flash.utils.Constants.SOCIAL_NETWORK_LIST;
 
 public class SocialNetworkRepository {
 

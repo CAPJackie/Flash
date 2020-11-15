@@ -1,4 +1,4 @@
-package com.example.flash.controller.fragments;
+package com.jackie.flash.controller.fragments;
 
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -10,8 +10,8 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.example.flash.R;
-import com.example.flash.view.PageViewModel;
+import com.jackie.flash.R;
+import com.jackie.flash.view.PageViewModel;
 
 /**
  * A placeholder fragment containing a simple view.
