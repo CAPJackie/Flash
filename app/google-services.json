@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "22938090311",
+    "firebase_url": "https://flash-3c3fb.firebaseio.com",
+    "project_id": "flash-3c3fb",
+    "storage_bucket": "flash-3c3fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22938090311:android:6846324ee909551f6caa62",
+        "android_client_info": {
+          "package_name": "com.jackie.flash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "22938090311-qp902r0kb9277hnjplvc6n64qg42avrm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCC04zKwwG5ykXvkzsgnK6_rjdFkCKA0zQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "22938090311-qp902r0kb9277hnjplvc6n64qg42avrm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
