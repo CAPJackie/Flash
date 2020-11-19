@@ -67,7 +67,7 @@ public class SettingsActivityViewModel extends ViewModel {
     }
 
     public boolean validateForDataUpdates(List<SocialNetwork> socialNetworks) {
-        System.out.println(socialNetworks.get(0) + "==" + this.initialSocialNetworksState.get(0) + "LIST"+ SOCIAL_NETWORK_LIST );
+//        System.out.println(socialNetworks.get(0) + "==" + this.initialSocialNetworksState.get(0) + "LIST"+ SOCIAL_NETWORK_LIST );
         return !socialNetworks.equals(initialSocialNetworksState);
     }
 }
