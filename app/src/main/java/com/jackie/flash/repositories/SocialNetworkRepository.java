@@ -2,7 +2,7 @@ package com.jackie.flash.repositories;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.jackie.flash.models.SocialNetwork;
+import com.jackie.flash.models.entities.SocialNetwork;
 
 import java.util.ArrayList;
 import java.util.List;

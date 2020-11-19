@@ -4,11 +4,9 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.jackie.flash.models.SocialNetwork;
+import com.jackie.flash.models.entities.SocialNetwork;
 import com.jackie.flash.repositories.SocialNetworkRepository;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static com.jackie.flash.utils.Constants.SOCIAL_NETWORK_LIST;

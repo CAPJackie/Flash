@@ -3,7 +3,7 @@ package com.jackie.flash.ui.activities;
 import android.os.Bundle;
 
 import com.jackie.flash.adapters.SocialNetworkAdapter;
-import com.jackie.flash.models.SocialNetwork;
+import com.jackie.flash.models.entities.SocialNetwork;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;

@@ -10,12 +10,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.ViewModel;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.jackie.flash.R;
-import com.jackie.flash.models.SocialNetwork;
-import com.jackie.flash.ui.activities.SettingsActivity;
+import com.jackie.flash.models.entities.SocialNetwork;
 import com.jackie.flash.viewmodels.SettingsActivityViewModel;
 
 import java.util.List;

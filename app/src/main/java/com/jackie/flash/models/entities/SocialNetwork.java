@@ -1,14 +1,24 @@
 
-package com.jackie.flash.models;
+package com.jackie.flash.models.entities;
 
-import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 import java.util.Objects;
 
+@Entity(tableName = SocialNetwork.TABLE_NAME)
 public class SocialNetwork {
+
+
+    @PrimaryKey(autoGenerate = true)
+    private int id;
+
     private String name;
     private int icon;
     private boolean checked;
+
+    public static final String TABLE_NAME = "social_network";
+
 
     @Override
     public boolean equals(Object o) {
@@ -38,6 +48,14 @@ public class SocialNetwork {
                 ", icon=" + icon +
                 ", checked=" + checked +
                 '}';
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
