@@ -1,7 +1,12 @@
 package com.jackie.flash.repositories;
 
+import android.app.Application;
+
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import com.jackie.flash.models.FlashDatabase;
+import com.jackie.flash.models.daos.SocialNetworkDao;
 import com.jackie.flash.models.entities.SocialNetwork;
 
 import java.util.ArrayList;
@@ -11,36 +16,26 @@ import static com.jackie.flash.utils.Constants.SOCIAL_NETWORK_LIST;
 
 public class SocialNetworkRepository {
 
-    private static SocialNetworkRepository instance;
-    private List<SocialNetwork> dataSet ;
 
-    private SocialNetworkRepository(){
-        dataSet = new ArrayList<>();
-    }
+    private LiveData<List<SocialNetwork>> socialNetworks;
+    private SocialNetworkDao socialNetworkDao;
 
-    public static SocialNetworkRepository getInstance(){
-        if(instance == null){
-            instance = new SocialNetworkRepository();
-        }
-        return instance;
+    public SocialNetworkRepository(Application application){
 
+        FlashDatabase flashDatabase = FlashDatabase.getInstance(application);
+        this.socialNetworkDao = flashDatabase.socialNetworkDao();
+        this.socialNetworks = socialNetworkDao.getAllSocialNetworks();
     }
 
 
-    //TODO: Make Api to fetch real data
-    public MutableLiveData<List<SocialNetwork>> getSocialNetworks(){
-        setSocialNetworks();
-
-        MutableLiveData<List<SocialNetwork>> data = new MutableLiveData<>();
-
-        data.setValue(dataSet);
-
-        return data;
+    public LiveData<List<SocialNetwork>> getSocialNetworks(){
+        return socialNetworks;
     }
 
-    private void setSocialNetworks(){
-        for (SocialNetwork socialNetwork: SOCIAL_NETWORK_LIST){
-            dataSet.add(socialNetwork.clone());
-        }
+    public void updateSocialNetwork(final SocialNetwork socialNetwork){
+        FlashDatabase.databaseWriteExecutor.execute(()->{
+            socialNetworkDao.update(socialNetwork);
+        });
     }
+
 }

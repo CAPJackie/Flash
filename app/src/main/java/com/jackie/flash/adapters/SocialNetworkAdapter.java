@@ -16,6 +16,7 @@ import com.jackie.flash.R;
 import com.jackie.flash.models.entities.SocialNetwork;
 import com.jackie.flash.viewmodels.SettingsActivityViewModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SocialNetworkAdapter extends RecyclerView.Adapter<SocialNetworkAdapter.ViewHolder> implements View.OnClickListener {
@@ -23,11 +24,15 @@ public class SocialNetworkAdapter extends RecyclerView.Adapter<SocialNetworkAdap
     private List<SocialNetwork> socialNetworkList;
     private SettingsActivityViewModel associateViewModel;
 
-    public SocialNetworkAdapter(List<SocialNetwork> socialNetworkList, SettingsActivityViewModel associateViewModel){
-        this.socialNetworkList = socialNetworkList;
+    public SocialNetworkAdapter(SettingsActivityViewModel associateViewModel){
         this.associateViewModel = associateViewModel;
+        socialNetworkList = new ArrayList<>();
     }
 
+    public void setSocialNetworkList(List<SocialNetwork> socialNetworkList) {
+        this.socialNetworkList = socialNetworkList;
+        notifyDataSetChanged();
+    }
 
     @NonNull
     @Override
@@ -44,6 +49,9 @@ public class SocialNetworkAdapter extends RecyclerView.Adapter<SocialNetworkAdap
 
     }
 
+
+
+
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         SocialNetwork socialNetwork = this.socialNetworkList.get(position);
@@ -58,12 +66,7 @@ public class SocialNetworkAdapter extends RecyclerView.Adapter<SocialNetworkAdap
         socialNetworkName.setText(socialNetwork.getName());
         socialNetworkIsVisible.setChecked(socialNetwork.isChecked());
         socialNetworkIsVisible.setTag(position);
-        socialNetworkIsVisible.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                associateViewModel.changeSocialNetworkChecked(position);
-            }
-        });
+        socialNetworkIsVisible.setOnClickListener(v -> associateViewModel.changeSocialNetworkChecked(socialNetwork));
 
 
 

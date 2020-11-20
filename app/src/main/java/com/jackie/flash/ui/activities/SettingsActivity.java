@@ -52,34 +52,20 @@ public class SettingsActivity extends AppCompatActivity {
 
 
         applyButton.setEnabled(false);
-        cancelButton.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        cancelButton.setOnClickListener(v -> finish());
 
 
 
         mSettingsActivityViewModel = new ViewModelProvider(this).get(SettingsActivityViewModel.class);
-
-
-        mSettingsActivityViewModel.init();
-
-        mSettingsActivityViewModel.getSocialNetworks().observe(this, new Observer<List<SocialNetwork>>() {
-            @Override
-            public void onChanged(List<SocialNetwork> socialNetworks) {
-                System.out.println("Social Network list has changed"+ SOCIAL_NETWORK_LIST);
-                if(mSettingsActivityViewModel.validateForDataUpdates(socialNetworks)){
-                    applyButton.setEnabled(true);
-                } else{
-                    applyButton.setEnabled(false);
-                }
-
-                socialNetworkAdapter.notifyDataSetChanged();
+        mSettingsActivityViewModel.getSocialNetworks().observe(this, socialNetworks -> {
+            socialNetworkAdapter.setSocialNetworkList(socialNetworks);
+            if(mSettingsActivityViewModel.validateForDataUpdates(socialNetworks)){
+                applyButton.setEnabled(true);
+            } else{
+                applyButton.setEnabled(false);
             }
 
+//            socialNetworkAdapter.notifyDataSetChanged();
         });
 
         initRecyclerView();
@@ -87,7 +73,7 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     private void initRecyclerView() {
-        socialNetworkAdapter = new SocialNetworkAdapter(mSettingsActivityViewModel.getSocialNetworks().getValue(), mSettingsActivityViewModel);
+        socialNetworkAdapter = new SocialNetworkAdapter(mSettingsActivityViewModel);
         recyclerView.setAdapter(socialNetworkAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

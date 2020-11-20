@@ -13,20 +13,17 @@ import java.util.List;
 
 @Dao
 public interface SocialNetworkDao {
-    @Insert
-    void insert(SocialNetwork socialNetwork);
 
     @Update
     void update(SocialNetwork socialNetwork);
 
-    @Delete
-    void delete(SocialNetwork socialNetwork);
-
-
-    @Query("SELECT name, icon, checked FROM "+ SocialNetwork.TABLE_NAME)
+    @Query("SELECT id, name, icon, checked FROM "+ SocialNetwork.TABLE_NAME)
     LiveData<List<SocialNetwork>> getAllSocialNetworks();
 
+    @Query("DELETE FROM "+ SocialNetwork.TABLE_NAME)
+    void deleteAll();
 
-//    @Update("UPDATE "+ SocialNetwork.TABLE_NAME + " SET checked=")
-//    void updateChecked(SocialNetwork socialNetwork);
+    @Insert
+    void insertAll(SocialNetwork... socialNetworks);
+
 }
