@@ -1,6 +1,7 @@
 package com.jackie.flash.models;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 
 import androidx.annotation.NonNull;
 import androidx.room.Database;
@@ -31,6 +32,8 @@ public abstract class FlashDatabase extends RoomDatabase {
                 SocialNetworkDao socialNetworkDao = instance.socialNetworkDao();
                 socialNetworkDao.deleteAll();
 
+
+
                 socialNetworkDao.insertAll(
                         new SocialNetwork("Facebook", R.drawable.facebook_logo),
                         new SocialNetwork("Instagram", R.drawable.instagram_logo),
@@ -40,6 +43,11 @@ public abstract class FlashDatabase extends RoomDatabase {
                 ;
 
             });
+        }
+
+        @Override
+        public void onOpen(@NonNull SupportSQLiteDatabase db) {
+            super.onOpen(db);
         }
     };
 

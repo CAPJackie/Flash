@@ -66,7 +66,7 @@ public class SocialNetworkAdapter extends RecyclerView.Adapter<SocialNetworkAdap
         socialNetworkName.setText(socialNetwork.getName());
         socialNetworkIsVisible.setChecked(socialNetwork.isChecked());
         socialNetworkIsVisible.setTag(position);
-        socialNetworkIsVisible.setOnClickListener(v -> associateViewModel.changeSocialNetworkChecked(socialNetwork));
+        socialNetworkIsVisible.setOnClickListener(v -> associateViewModel.update(socialNetwork));
 
 
 

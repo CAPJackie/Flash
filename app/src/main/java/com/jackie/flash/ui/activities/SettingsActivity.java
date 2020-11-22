@@ -56,6 +56,7 @@ public class SettingsActivity extends AppCompatActivity {
 
 
 
+
         mSettingsActivityViewModel = new ViewModelProvider(this).get(SettingsActivityViewModel.class);
         mSettingsActivityViewModel.getSocialNetworks().observe(this, socialNetworks -> {
             socialNetworkAdapter.setSocialNetworkList(socialNetworks);
@@ -71,6 +72,7 @@ public class SettingsActivity extends AppCompatActivity {
         initRecyclerView();
 
     }
+
 
     private void initRecyclerView() {
         socialNetworkAdapter = new SocialNetworkAdapter(mSettingsActivityViewModel);

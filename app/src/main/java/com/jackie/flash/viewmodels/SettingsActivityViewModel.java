@@ -28,9 +28,7 @@ public class SettingsActivityViewModel extends AndroidViewModel {
         socialNetworkRepository = new SocialNetworkRepository(application);
         socialNetworks = socialNetworkRepository.getSocialNetworks();
 //        initialSocialNetworksState = socialNetworkRepository.getSocialNetworks();
-//        for (SocialNetwork socialNetwork: Objects.requireNonNull(socialNetworks.getValue())){
-//            initialSocialNetworksState.add(socialNetwork.clone());
-//        }
+
     }
 
     public LiveData<List<SocialNetwork>> getSocialNetworks(){
@@ -39,15 +37,28 @@ public class SettingsActivityViewModel extends AndroidViewModel {
 
 
 
-    public void changeSocialNetworkChecked(SocialNetwork socialNetwork){
+    public void update(SocialNetwork socialNetwork){
         SocialNetwork socialNetworkChanged = socialNetwork.clone();
         socialNetworkChanged.setChecked(!socialNetworkChanged.isChecked());
+        socialNetworkChanged.setId(socialNetwork.getId());
         socialNetworkRepository.updateSocialNetwork(socialNetworkChanged);
     }
 
 
 
     public boolean validateForDataUpdates(List<SocialNetwork> socialNetworks) {
-        return !socialNetworks.equals(this.initialSocialNetworksState);
+        boolean thereIsUpdates;
+
+        if(initialSocialNetworksState == null){
+            initialSocialNetworksState = new ArrayList<>();
+            for (SocialNetwork socialNetwork:socialNetworks){
+                initialSocialNetworksState.add(socialNetwork.clone());
+            }
+
+        }
+        thereIsUpdates = !socialNetworks.equals(this.initialSocialNetworksState);
+
+
+        return thereIsUpdates;
     }
 }
