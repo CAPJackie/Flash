@@ -55,18 +55,19 @@ public class SettingsActivity extends AppCompatActivity {
         cancelButton.setOnClickListener(v -> finish());
 
 
-
-
         mSettingsActivityViewModel = new ViewModelProvider(this).get(SettingsActivityViewModel.class);
         mSettingsActivityViewModel.getSocialNetworks().observe(this, socialNetworks -> {
             socialNetworkAdapter.setSocialNetworkList(socialNetworks);
-            if(mSettingsActivityViewModel.validateForDataUpdates(socialNetworks)){
-                applyButton.setEnabled(true);
-            } else{
-                applyButton.setEnabled(false);
-            }
+            socialNetworkAdapter.notifyDataSetChanged();
+        });
 
-//            socialNetworkAdapter.notifyDataSetChanged();
+        mSettingsActivityViewModel.getChanges().observe(this, changes -> {
+            applyButton.setEnabled(changes.size() > 0);
+        });
+
+        applyButton.setOnClickListener(l -> {
+            mSettingsActivityViewModel.updateAll();
+            applyButton.setEnabled(false);
         });
 
         initRecyclerView();

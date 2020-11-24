@@ -10,6 +10,7 @@ import com.jackie.flash.models.daos.SocialNetworkDao;
 import com.jackie.flash.models.entities.SocialNetwork;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import static com.jackie.flash.utils.Constants.SOCIAL_NETWORK_LIST;
@@ -38,4 +39,8 @@ public class SocialNetworkRepository {
         });
     }
 
+    public void updateAll(Collection<SocialNetwork> values) {
+        FlashDatabase.databaseWriteExecutor.execute(()->socialNetworkDao.updateAll(values));
+
+    }
 }

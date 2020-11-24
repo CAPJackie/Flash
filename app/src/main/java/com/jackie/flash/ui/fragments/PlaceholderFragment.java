@@ -1,6 +1,5 @@
 package com.jackie.flash.ui.fragments;
 
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,20 +17,19 @@ import com.jackie.flash.R;
 public class PlaceholderFragment extends Fragment {
 
 
+    private int socialMedia;
+    private ImageView socialMediaLogoView;
 
-    public int getSocialMediaType() {
-        return socialMediaType;
+    public int getSocialMedia() {
+        return socialMedia;
     }
 
-    public void setSocialMediaType(int socialMediaType) {
-        this.socialMediaType = socialMediaType;
+    public void setSocialMedia(int socialMedia) {
+        this.socialMedia = socialMedia;
     }
 
-    private int socialMediaType;
-
-
-    public PlaceholderFragment(int socialMediaType) {
-        this.socialMediaType = socialMediaType;
+    public PlaceholderFragment(int socialMediaLogo) {
+        this.socialMedia = socialMediaLogo;
     }
 
 
@@ -45,27 +43,16 @@ public class PlaceholderFragment extends Fragment {
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_main, container, false);
-        ImageView socialMediaLogo = root.findViewById(R.id.social_media_logo);
+        socialMediaLogoView = root.findViewById(R.id.social_media_logo);
 
-        Resources resources = root.getResources();
-        if (resources.getInteger(R.integer.facebook) == this.socialMediaType){
-            socialMediaLogo.setImageResource(R.drawable.facebook_logo);
-        } else if(resources.getInteger(R.integer.instagram) == this.socialMediaType){
-            socialMediaLogo.setImageResource(R.drawable.instagram_logo);
-
-        }
-        else if(resources.getInteger(R.integer.twitter) == this.socialMediaType){
-            socialMediaLogo.setImageResource(R.drawable.twitter_logo);
-
-        }
-        else if(resources.getInteger(R.integer.linkedin) == this.socialMediaType){
-            socialMediaLogo.setImageResource(R.drawable.linkedin_logo);
-
-        }
-        else{
-            socialMediaLogo.setImageResource(R.drawable.facebook_logo);
-        }
+        socialMediaLogoView.setImageResource(this.socialMedia);
 
         return root;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        System.out.println("Prueba resume" + this.socialMedia);
     }
 }

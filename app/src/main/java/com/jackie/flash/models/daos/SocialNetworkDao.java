@@ -9,6 +9,8 @@ import androidx.room.Update;
 
 import com.jackie.flash.models.entities.SocialNetwork;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 @Dao
@@ -16,6 +18,9 @@ public interface SocialNetworkDao {
 
     @Update
     void update(SocialNetwork socialNetwork);
+
+    @Update
+    void updateAll(Collection<SocialNetwork> socialNetworks);
 
     @Query("SELECT id, name, icon, checked FROM "+ SocialNetwork.TABLE_NAME)
     LiveData<List<SocialNetwork>> getAllSocialNetworks();

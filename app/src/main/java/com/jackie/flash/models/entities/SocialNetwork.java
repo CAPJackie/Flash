@@ -41,6 +41,7 @@ public class SocialNetwork {
         this.checked = true;
     }
 
+
     @Override
     public String toString() {
         return "SocialNetwork{" +
