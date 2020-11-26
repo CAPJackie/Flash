@@ -18,7 +18,10 @@
     <string name="settings">Settings</string>
     <string name="social_media_tabs">Social Media tabs</string>
 
-    <string name="facebook_app_id">9223372036854775807</string>
+    <string name="facebook_app_id">2359567940856774</string>
+    <string name="post">Post</string>
+    <string name="write_a_new_post">Write a new Post</string>
+    <string name="facebook_logo">Facebook Logo</string>
 
 
 </resources>

@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.jackie.flash.R;
 import com.jackie.flash.models.entities.SocialNetwork;
+import com.jackie.flash.ui.fragments.FacebookFragment;
 import com.jackie.flash.ui.fragments.PlaceholderFragment;
 
 import java.util.ArrayList;
@@ -44,8 +45,17 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
         // getItem is called to instantiate the fragment for the given page.
         // Return a PlaceholderFragment (defined as a static inner class below).
         //TODO Refactorize with a fragment file for each one
-        System.out.println("POSITION"+position + " icon" + socialNetworkList.get(position).getIcon() + "NAME" + socialNetworkList.get(position).getName());
-        return new PlaceholderFragment(socialNetworkList.get(position).getIcon());
+
+        final String facebook = this.mContext.getResources().getString(R.string.facebook);
+        SocialNetwork socialNetwork = socialNetworkList.get(position);
+        String name = socialNetwork.getName();
+
+        if (facebook.equals(name)) {
+            return FacebookFragment.newInstance();
+        }
+        return new PlaceholderFragment(socialNetwork.getIcon());
+//        System.out.println("POSITION"+position + " icon" + socialNetworkList.get(position).getIcon() + "NAME" + socialNetworkList.get(position).getName());
+//        return new PlaceholderFragment(socialNetworkList.get(position).getIcon());
     }
 
     @Override

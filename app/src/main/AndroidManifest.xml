@@ -16,7 +16,7 @@
         android:theme="@style/AppTheme">
 
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
-        <provider android:authorities="com.facebook.app.FacebookContentProvider9223372036854775807"
+        <provider android:authorities="com.facebook.app.FacebookContentProvider2359567940856774"
             android:name="com.facebook.FacebookContentProvider"
             android:exported="false" />
 
